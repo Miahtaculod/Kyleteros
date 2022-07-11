@@ -32,7 +32,7 @@
                 <!--Cart item-->
                 <div class="row border-top py-3 mt-3">
                     <div class="col-sm-2">
-                        <img src="<?php echo $item['item_image'] ?? "No image available"?>" alt="cart1" style="height: 120px" class="img-fluid">
+                        <img src="img/<?php echo $item['item_image'] ?? "No image available"?>" alt="cart1" style="height: 120px" class="img-fluid">
                     </div>
                     <div class="col-sm-8">
                         <h5 class="font-baloo font-size-20"><?php echo $item['item_name'] ?? "Item name not available"; ?></h5>
