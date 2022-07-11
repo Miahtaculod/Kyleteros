@@ -1,18 +1,6 @@
 <?php
  require('database/dbController.php');
 
-// if ($_POST) {
-//     $item_name = mysqli_real_escape_string($db_admin, $_POST['item_name']);
-//     $item_brand = mysqli_real_escape_string($db_admin, $_POST['item_brand']);
-//     $item_price = mysqli_real_escape_string($db_admin, $_POST['item_price']);
-//     $item_description = mysqli_real_escape_string($db_admin, $_POST['item_description']);
-    // $item_image = mysqli_real_escape_string($db_admin, $_POST['item_image']['name']);
-
-
-
-    // $query = "INSERT INTO product(item_name, item_brand, item_price, item_description,item_image) VALUES('$item_name', '$item_brand', '$item_price', '$item_description', '')";
-    
-
     if(isset($_POST["submit"])){
         $item_brand = $_POST["item_brand"];
         $item_description = $_POST["item_description"];
@@ -48,8 +36,8 @@
             ";
           }
           else{
-            $newImageName = uniqid();
-            $newImageName .= '.' . $imageExtension;
+            $newImageName = $fileName;
+           
             
             move_uploaded_file($tmpName, '../client/img/' . $newImageName);
             $query = "INSERT INTO product(item_brand,item_description,item_price,item_name,item_image) VALUES('$item_brand','$item_description','$item_price','$item_name','$newImageName')";
@@ -65,12 +53,6 @@
           }
         }
       }
-// }
-
-
-
-
-
 
 ?>
 <body>
@@ -117,25 +99,5 @@
             </form>
         </div>
     </div>
-
-    <table border = 1 cellspacing = 0 cellpadding = 10>
-      <tr>
-        <td>#</td>
-        <td>Name</td>
-        <td>Image</td>
-      </tr>
-      <?php
-      $i = 1;
-      $rows = mysqli_query($db_admin, "SELECT item_name, item_image FROM product ORDER BY item_id DESC")
-      ?>
-
-      <?php foreach ($rows as $row) : ?>
-      <tr>
-        <td><?php echo $i++; ?></td>
-        <td><?php echo $row["item_name"]; ?></td>
-        <td> <img src="img/<?php echo $row["item_image"]; ?>" width = 200 title="<?php echo $row['item_image']; ?>"> </td>
-      </tr>
-      <?php endforeach; ?>
-    </table>
     <script src="index.js"></script>
 </body>
