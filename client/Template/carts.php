@@ -37,7 +37,7 @@
               
                 <div class="row border-top py-3 mt-3">
                     <div class="col-sm-2">
-                      <a href="<?php printf('%s?item_id=%s', 'product.php',$item['item_id'])?>">  <img src="<?php echo $item['item_image'] ?? "No image available"?>" alt="cart1" style="height: 120px" class="img-fluid"></a>
+                      <a href="<?php printf('%s?item_id=%s', 'product.php',$item['item_id'])?>">  <img src="img/<?php echo $item['item_image'] ?? "No image available"?>" alt="cart1" style="height: 120px" class="img-fluid"></a>
                     </div>
                 
                     <div class="col-sm-8">

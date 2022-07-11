@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img src="<?php echo $item['item_image'] ?? "No image available"?>" alt="biogesic" class="img-fluid">
+                    <img src="img/<?php echo $item['item_image'] ?? "No image available"?>" alt="biogesic" class="img-fluid">
                     <div class="form-row pt-4 font-size-16 font-baloo">
                         <div class="col">
                             <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
