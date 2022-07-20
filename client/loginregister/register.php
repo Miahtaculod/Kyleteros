@@ -21,6 +21,8 @@ if(isset($_POST['submit'])){
             $result = mysqli_query($db_admin, $sql);
             if($result){
                 echo "<script>alert('Registered Complete')</script>";
+                exit;
+                header("Location: login.php");
                 $first_name = "";
                 $last_name = "";
                 $username ="";
