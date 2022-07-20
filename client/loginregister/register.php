@@ -5,6 +5,8 @@ include'../admin/database/dbController.php';
 error_reporting(0);
 
 if(isset($_POST['submit'])){
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = md5($_POST['password']);
@@ -14,11 +16,13 @@ if(isset($_POST['submit'])){
         $sql = "SELECT * FROM user WHERE email='$email'";
         $result = mysqli_query($db_admin, $sql);
         if(!$result->num_rows > 0){
-            $sql = "INSERT INTO user(username, email, password, cpassword)
-                    VALUES ('$username', '$email', '$password', '$cpassword')";
+            $sql = "INSERT INTO user(first_name, last_name, username, email, password, cpassword)
+                    VALUES ('$first_name', '$last_name', '$username', '$email', '$password', '$cpassword')";
             $result = mysqli_query($db_admin, $sql);
             if($result){
                 echo "<script>alert('Registered Complete')</script>";
+                $first_name = "";
+                $last_name = "";
                 $username ="";
                 $email ="";
                 $_POST['password'] = "";
@@ -53,6 +57,12 @@ if(isset($_POST['submit'])){
         <div class="containter">
         <form action="" method="POST" class="login-email">
             <p class="login-text" style="font-size: 2rem; font-weight: 800;">Register</p>
+            <div class="input-group">
+                <input type="text" placeholder="First Name" name="first_name" value="<?php echo $first_name ?>" required>
+            </div>
+            <div class="input-group">
+                <input type="text" placeholder="Last Name" name="last_name" value="<?php echo $last_name ?>" required>
+            </div>
             <div class="input-group">
                 <input type="text" placeholder="Username" name="username" value="<?php echo $username ?>" required>
             </div>
