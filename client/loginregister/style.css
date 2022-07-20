@@ -1,0 +1,150 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(../assets/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+} 
+
+.containter{
+    width: 400px;
+    min-height: 400px;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    padding: 40px 30px;
+}
+
+.containter .login-text{
+    color: #111;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
+}
+
+.containter .login-social{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    margin-bottom: 25px;
+}
+
+.containter .login-social a{
+    padding: 12px;
+    margin: 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    text-decoration: none;
+    transition: .3s;
+    font-size: 1rem;
+    color: #FFF;
+
+}
+  
+.containter .login-social a i{
+    margin-right: 10px;
+     
+}
+
+.containter .login-email .input-group{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+
+.containter .login-email .input-group input{
+    width: 100%;
+    height: 100%;
+    border: solid #e7e7e7;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+}
+
+.containter .login-email .input-group input:focus, .containter .login-email .input-group input:valid{
+    border-color: #525257;
+}
+
+.containter .login-email .input-group .btn{
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #b5b5b5;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #e7e7e7;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.containter .login-email .input-group .btn:hover{
+    transform: translateY(-5px);
+    background: rgb(92, 92, 92);
+}
+
+.login-register-text{
+    font-weight: 600;
+    color: #111;
+}
+
+.login-register-text a{
+    text-decoration: none;
+    color: #b5b5b5;
+}
+
+.containter .login-social a.facebook{
+    background: #426782;
+}
+.containter .login-social a.twitter{
+    background: #1DA1F2;
+}
+.containter .login-social a.google{
+    background: #db4a39;
+}
+.containter .login-social a.linkedin{
+    background: #0e76a8;
+}
+.containter .login-social a.facebook:hover{
+    background: #36556b;
+}
+.containter .login-social a.twitter:hover{
+    background: #197fbe;
+}
+.containter .login-social a.google:hover{
+    background: #933328;
+}
+.containter .login-social a.linkedin:hover{
+    background: #11597a;
+}
+
+@media (max-width:430px){
+    .containter{
+        width: 300px;
+    }
+    .containter .login-social{
+        display: block;
+    }
+    .containter .login-social a{
+        display: block;
+    }
+}
